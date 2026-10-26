@@ -2,12 +2,12 @@ import './App.css'
 
 const services = [
   { name: 'Landing de presencia', desc: 'Una página clara con carta, fotos, ubicación, horarios y botón de reserva.', price: 800, maintenance: 0, commission: 160, monthlyCommission: 0 },
-  { name: 'Web completa + mantenimiento', desc: 'Varias secciones, carta editable, blog, SEO y soporte continuo.', price: 1100, maintenance: 80, commission: 220, monthlyCommission: 8 },
-  { name: 'Web con base de datos', desc: 'Reservas, panel de gestión, pedidos o catálogo conectado.', price: 1400, maintenance: 110, commission: 280, monthlyCommission: 11 },
-  { name: 'Agente WhatsApp', desc: 'Responde, confirma y apunta reservas en texto, a cualquier hora.', price: 600, maintenance: 110, commission: 120, monthlyCommission: 11 },
-  { name: 'Agente telefónico', desc: 'Contesta el teléfono con voz natural y registra la reserva.', price: 1000, maintenance: 200, commission: 200, monthlyCommission: 20 },
-  { name: 'Automatizaciones', desc: 'Avisos, facturas, pedidos, seguimiento de clientes y reseñas.', price: 650, maintenance: 90, commission: 130, monthlyCommission: 9 },
-  { name: 'Tienda online', desc: 'Para vino, producto gourmet o merchandising, con pagos y envíos.', price: 1800, maintenance: 120, commission: 360, monthlyCommission: 12 },
+  { name: 'Web completa + mantenimiento', desc: 'Varias secciones, carta editable, blog, SEO y soporte continuo.', price: 1100, maintenance: 80, commission: 220, monthlyCommission: 16 },
+  { name: 'Web con base de datos', desc: 'Reservas, panel de gestión, pedidos o catálogo conectado.', price: 1400, maintenance: 110, commission: 280, monthlyCommission: 22 },
+  { name: 'Agente WhatsApp', desc: 'Responde, confirma y apunta reservas en texto, a cualquier hora.', price: 600, maintenance: 110, commission: 120, monthlyCommission: 22 },
+  { name: 'Agente telefónico', desc: 'Contesta el teléfono con voz natural y registra la reserva.', price: 1000, maintenance: 200, commission: 200, monthlyCommission: 40 },
+  { name: 'Automatizaciones', desc: 'Avisos, facturas, pedidos, seguimiento de clientes y reseñas.', price: 650, maintenance: 90, commission: 130, monthlyCommission: 18 },
+  { name: 'Tienda online', desc: 'Para vino, producto gourmet o merchandising, con pagos y envíos.', price: 1800, maintenance: 120, commission: 360, monthlyCommission: 24 },
 ]
 
 const references = [
@@ -17,9 +17,9 @@ const references = [
 ]
 
 const projections = [
-  { clients: 3, initial: 660, monthly: 24 },
-  { clients: 5, initial: 1100, monthly: 40 },
-  { clients: 10, initial: 2200, monthly: 80 },
+  { clients: 3, initial: 660, monthly: 48 },
+  { clients: 5, initial: 1100, monthly: 80 },
+  { clients: 10, initial: 2200, monthly: 160 },
 ]
 
 function FlowDiagram() {
@@ -115,7 +115,7 @@ function App() {
             <div className="model-label">del pago inicial</div>
           </div>
           <div className="model-card">
-            <div className="model-number">10%</div>
+            <div className="model-number">20%</div>
             <div className="model-label">del mantenimiento mensual</div>
           </div>
         </div>
@@ -151,7 +151,7 @@ function App() {
               <div key={p.clients} className="maintenance-chart-row">
                 <span className="maintenance-chart-clients">{p.clients} clientes</span>
                 <div className="maintenance-chart-track" aria-hidden="true">
-                  <div className="maintenance-chart-fill" style={{ width: `${(p.monthly / 80) * 100}%` }} />
+                  <div className="maintenance-chart-fill" style={{ width: `${(p.monthly / 160) * 100}%` }} />
                 </div>
                 <strong>{p.monthly} €/mes</strong>
               </div>
